@@ -11,20 +11,22 @@ numPlaybackTimes = int(input("Hoeveel keer spelen we de sample af?:"))
 interval = [0]*numPlaybackTimes
 
 for i in range(0,numPlaybackTimes):
-    interval[i] = int(input("interval:"))
+    interval[i] = float(input("interval:"))
 
 bpm = int(input("Wat is het bpm?:"))
-multi = 60/(bpm*4)
+multi = 60/bpm
 
 clap = sa.WaveObject.from_wave_file(os.path.join(".","Clap.wav"))
 #wave_obj = sa.WaveObject.from_wave_file(os.path.join(".","Clap.wav"))
 #wave_obj = sa.WaveObject.from_wave_file(os.path.join(".","Clap.wav"))
 
-s = t.time()
+start = t.time()
 for i in range(0,numPlaybackTimes):
-    while (t.time() - s) < trig:
+    while (t.time() - start) < trig:
         t.sleep(0.01)
+    print(t.time() - start)
     clap.play()
     trig = trig + interval[i]*multi
-    #t.sleep(interval[i]*multi)
+    print(interval[i])
+    print(trig)
 t.sleep(1)
