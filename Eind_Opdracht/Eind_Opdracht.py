@@ -18,11 +18,9 @@ Ns = rand.randrange(2, Bs)
 Bc = rand.randrange(4, 20)
 Nc = rand.randrange(2, Bc)
 
-numPlaybackTimes = 1000
-
-print("het standaard bpm is: 127")
 bpm = 127
 
+numPlaybackTimes = 0
 
 
 
@@ -36,12 +34,88 @@ def is_number(s):
 def ui_command():
     global inp
     global bpm
+    global Bk
+    global Nk
+    global Bs
+    global Ns
+    global Bc
+    global Nc
+    global numPlaybackTimes
     inp = input(">")
-    if inp[:3] == "bpm":
+    if inp[:4] == "play":
+        if is_number(inp[5:10]):
+            numPlaybackTimes = int(inp[5:10])
+        else:
+            print("play needs to be an integer value")
+
+    elif inp[:4] == "info":
+        info()
+    elif inp[:3] == "bpm":
         if is_number(inp[4:8]):
             bpm = int(inp[4:8])
         else:
             print("bpm needs to be an integer value")
+
+    elif inp[:2] == "Bk":
+        if is_number(inp[3:8]):
+            if int(inp[3:8]) >= Nk:
+                Bk = int(inp[3:8])
+            else:
+                print("Bk needs to be more than Nk =", Nk)
+        else:
+            print("Bk needs to be an integer value")
+
+    elif inp[:2] == "Nk":
+        if is_number(inp[3:8]):
+            if int(inp[3:8]) <= Bk:
+                Nk = int(inp[3:8])
+            else:
+                print("Nk needs to be less than Bk =", Bk)
+        else:
+            print("Nk needs to be an integer value")
+
+
+    elif inp[:2] == "Bs":
+        if is_number(inp[3:8]):
+            if int(inp[3:8]) >= Ns:
+                Bs = int(inp[3:8])
+            else:
+                print("Bs needs to be more than Ns =", Ns)
+        else:
+            print("Bksneeds to be an integer value")
+
+
+
+    elif inp[:2] == "Ns":
+        if is_number(inp[3:8]):
+            if int(inp[3:8]) <= Bs:
+                Ns = int(inp[3:8])
+            else:
+                print("Ns needs to be less than Bs =", Bs)
+        else:
+            print("Ns needs to be an integer value")
+
+
+    elif inp[:2] == "Bc":
+        if is_number(inp[3:8]):
+            if int(inp[3:8]) >= Nc:
+                Bc = int(inp[3:8])
+            else:
+                print("Bc needs to be more than Nc =", Nc)
+        else:
+            print("Bc needs to be an integer value")
+
+
+    elif inp[:2] == "Nc":
+        if is_number(inp[3:8]):
+            if int(inp[3:8]) <= Bc:
+                Nc = int(inp[3:8])
+            else:
+                print("Nc needs to be less than Bc =", Bc)
+        else:
+            print("Nc needs to be an integer value")
+
+
     else:
         print("syntax error")
 
@@ -56,18 +130,27 @@ def euclidianGen(B, N):
     return r
 
 
+intervalk = euclidianGen(Bk, Nk)
+intervals = euclidianGen(Bs, Ns)
+intervalc = euclidianGen(Bc, Nc)
 
-intervalk = euclidianGen(Bk,Nk)
-intervals = euclidianGen(Bs,Ns)
-intervalc = euclidianGen(Bc,Nc)
+def info():
+    print("het  bpm is:", bpm)
 
-print(intervalk)
-print(intervals)
-print(intervalc)
+    print("Euclidian waardes van de kick zijn:")
+    print("Beats(Bk):", Bk)
+    print("Aantal(Nk):", Nk)
+    print(intervalk)
+    print("Euclidian waardes van de snare zijn:")
+    print("Beats(Bs):", Bs)
+    print("Aantal(Ns):", Ns)
+    print(intervals)
+    print("Euclidian waardes van de clap zijn:")
+    print("Beats(Bc):", Bc)
+    print("Aantal(Nc):", Nc)
+    print(intervalc)
 
-
-
-
+info()
 
 kick = sa.WaveObject.from_wave_file(os.path.join(".","Kick.wav"))
 snare = sa.WaveObject.from_wave_file(os.path.join(".","Snare.wav"))
@@ -81,9 +164,16 @@ def play():
     trigk = 0
     trigs = 0
     trigc = 0
-    for i in range(0,numPlaybackTimes):
+    i = 0
+    global numPlaybackTimes
+    while numPlaybackTimes >= 0:
+        numPlaybackTimes = numPlaybackTimes - 1
+        i = i + 1
         multi = 60 / (bpm)
         trig = 0
+        intervalk = euclidianGen(Bk, Nk)
+        intervals = euclidianGen(Bs, Ns)
+        intervalc = euclidianGen(Bc, Nc)
         while trig == 0:
             if (t.time() - start) > trigk:
                 kick.play()
@@ -102,18 +192,22 @@ def play():
             else:
                 t.sleep(0.1)
                 trig = 0
+    t.sleep(0.5)
+    play()
+
+
+
+
 
 def ui_thread():
     while True:
+
         ui_command()
-
-
-
-
 
 
 thr1 = Thread(target=ui_thread)
 thr1.start()
+
 thr2 = Thread(target=play)
 thr2.run()
 
