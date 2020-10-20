@@ -1,12 +1,12 @@
-#/mnt/c/users/ninos/documents/csd2/ritmische_player
+# /mnt/c/users/ninos/documents/csd2/ritmische_player
 import os
 import simpleaudio as sa
 import time as t
 import math as math
 from threading import Thread
 import random as rand
-
-
+import midiutil as midi
+from midiutil import MIDIFile
 
 trig = 0
 Bk = rand.randrange(4, 20)
@@ -18,10 +18,30 @@ Ns = rand.randrange(2, Bs)
 Bc = rand.randrange(4, 20)
 Nc = rand.randrange(2, Bc)
 
+Pk = 60
+Ps = 61
+Pc = 63
+
 bpm = 127
 
 numPlaybackTimes = 0
+writemidi = 0
 
+
+def write():
+    global output_file
+    global writemidi
+    global numPlaybackTimes
+    global midifile
+    writemidi = 1
+    tempo = bpm
+    midifile = MIDIFile(1)
+    midifile.addTempo(0, 0, tempo)
+    numPlaybackTimes = int(input("Duration:"))
+    t.sleep(numPlaybackTimes)
+    with open("media/Sequence.mid", "wb") as output_file:
+        midifile.writeFile(output_file)
+    writemidi = 0
 
 
 def is_number(s):
@@ -30,6 +50,7 @@ def is_number(s):
         return True
     except ValueError:
         pass
+
 
 def ui_command():
     global inp
@@ -50,6 +71,10 @@ def ui_command():
 
     elif inp[:4] == "info":
         info()
+
+    elif inp[:5] == "write":
+        write()
+
     elif inp[:3] == "bpm":
         if is_number(inp[4:8]):
             bpm = int(inp[4:8])
@@ -122,9 +147,9 @@ def ui_command():
 
 def euclidianGen(B, N):
     remainder = B % N
-    inter = int(B/N)
+    inter = int(B / N)
     if remainder > 0:
-        r = [inter]*N + [remainder]
+        r = [inter] * N + [remainder]
     else:
         r = [inter] * N
     return r
@@ -133,6 +158,7 @@ def euclidianGen(B, N):
 intervalk = euclidianGen(Bk, Nk)
 intervals = euclidianGen(Bs, Ns)
 intervalc = euclidianGen(Bc, Nc)
+
 
 def info():
     print("het  bpm is:", bpm)
@@ -150,13 +176,12 @@ def info():
     print("Aantal(Nc):", Nc)
     print(intervalc)
 
+
 info()
 
-kick = sa.WaveObject.from_wave_file(os.path.join(".","Kick.wav"))
-snare = sa.WaveObject.from_wave_file(os.path.join(".","Snare.wav"))
-clap = sa.WaveObject.from_wave_file(os.path.join(".","Clap.wav"))
-
-
+kick = sa.WaveObject.from_wave_file(os.path.join(".", "Kick.wav"))
+snare = sa.WaveObject.from_wave_file(os.path.join(".", "Snare.wav"))
+clap = sa.WaveObject.from_wave_file(os.path.join(".", "Clap.wav"))
 
 
 def play():
@@ -175,19 +200,31 @@ def play():
         intervals = euclidianGen(Bs, Ns)
         intervalc = euclidianGen(Bc, Nc)
         while trig == 0:
+
             if (t.time() - start) > trigk:
                 kick.play()
                 trig = 1
                 trigk = trigk + intervalk[i % len(intervalk)] * multi
+                if writemidi == 1:
+                    midifile.addNote(0, 0, int(Pk), int(trigk), int(intervalk[i % len(intervalk)]), 100)
+                    print(int(Pk),int(trigk),int(intervalk[i % len(intervalk)]))
+
             if (t.time() - start) > trigs:
                 snare.play()
                 trig = 1
                 trigs = trigs + intervals[i % len(intervals)] * multi
+                if writemidi == 1:
+                     midifile.addNote(0, 0, int(Ps), int(trigs), int(intervals[i % len(intervals)]), 100)
+                     print(int(Ps),int(trigs),int(intervals[i % len(intervals)]))
 
             if (t.time() - start) > trigc:
                 clap.play()
                 trig = 1
                 trigc = trigc + intervalc[i % len(intervalc)] * multi
+                if writemidi == 1:
+                     midifile.addNote(0, 0, int(Pc), int(trigc), int(intervalc[i % len(intervalc)]), 100)
+                     print(int(Pc), int(trigc), int(intervalc[i % len(intervalc)]))
+
 
             else:
                 t.sleep(0.1)
@@ -196,12 +233,8 @@ def play():
     play()
 
 
-
-
-
 def ui_thread():
     while True:
-
         ui_command()
 
 
@@ -209,5 +242,4 @@ thr1 = Thread(target=ui_thread)
 thr1.start()
 
 thr2 = Thread(target=play)
-thr2.run()
-
+thr2.start()
