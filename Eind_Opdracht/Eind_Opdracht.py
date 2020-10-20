@@ -37,7 +37,6 @@ def write():
     tempo = bpm
     midifile = MIDIFile(1)
     midifile.addTempo(0, 0, tempo)
-    numPlaybackTimes = int(input("Duration:"))
     t.sleep(numPlaybackTimes)
     with open("media/Sequence.mid", "wb") as output_file:
         midifile.writeFile(output_file)
@@ -73,7 +72,11 @@ def ui_command():
         info()
 
     elif inp[:5] == "write":
-        write()
+        if is_number(inp[5:10]):
+            numPlaybackTimes = int((inp[5:10]))
+            write()
+        else:
+            print("amount needs to be an integer value")
 
     elif inp[:3] == "bpm":
         if is_number(inp[4:8]):
