@@ -1,0 +1,7 @@
+﻿  jack_module.cpp
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(14,10): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+  reverb.cpp
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(15,10): fatal error C1083: Cannot open include file: 'jack/jack.h': No such file or directory
+  ringbuffer.cpp
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\ringbuffer.cpp : fatal error C1041: cannot open program database 'F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\Debug\vc142.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
+  Generating Code...

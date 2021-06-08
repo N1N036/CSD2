@@ -1,0 +1,85 @@
+﻿  jack_module.cpp
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(28,22): error C2065: 'jack_default_audio_sample_t': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(28,21): error C2059: syntax error: ','
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(29,6): error C2065: 'jack_default_audio_sample_t': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(29,36): error C2065: 'jack_default_audio_sample_t': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(29,67): error C2065: 'jack_nframes_t': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(33,51): error C2061: syntax error: identifier 'jack_nframes_t'
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(34,17): error C2143: syntax error: missing ';' before '*'
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(34,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(34,24): error C2238: unexpected token(s) preceding ';'
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(21,20): error C2143: syntax error: missing ';' before '*'
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(21,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(21,31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(21,45): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(21,60): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(47,3): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(47,48): error C2065: 'JackNoStartServer': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(47,12): error C3861: 'jack_client_open': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(48,7): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(55,20): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(55,3): error C3861: 'jack_on_shutdown': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(57,29): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(57,3): error C3861: 'jack_set_process_callback': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(61,24): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(61,41): error C2065: 'JACK_DEFAULT_AUDIO_TYPE': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(61,65): error C2065: 'JackPortIsOutput': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(61,5): error C3861: 'jack_port_register': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(63,24): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(63,41): error C2065: 'JACK_DEFAULT_AUDIO_TYPE': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(63,65): error C2065: 'JackPortIsOutput': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(63,5): error C3861: 'jack_port_register': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(65,24): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(65,39): error C2065: 'JACK_DEFAULT_AUDIO_TYPE': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(65,63): error C2065: 'JackPortIsInput': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(65,5): error C3861: 'jack_port_register': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(68,20): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(68,6): error C3861: 'jack_activate': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(79,31): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(79,10): error C3861: 'jack_get_sample_rate': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(100,30): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(100,51): error C2065: 'JackPortIsInput': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(100,15): error C3861: 'jack_get_ports': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(106,19): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(106,26): error C3861: 'jack_port_name': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(106,6): error C3861: 'jack_connect': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(111,19): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(111,26): error C3861: 'jack_port_name': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(111,6): error C3861: 'jack_connect': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(121,30): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(121,47): error C2065: 'JackPortIsPhysical': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(121,66): error C2065: 'JackPortIsOutput': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(121,15): error C3861: 'jack_get_ports': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(127,19): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(127,35): error C3861: 'jack_port_name': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(127,6): error C3861: 'jack_connect': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(138,19): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(138,3): error C3861: 'jack_deactivate': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(139,24): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(139,3): error C3861: 'jack_port_disconnect': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(140,24): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(140,3): error C3861: 'jack_port_disconnect': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(141,24): error C2065: 'client': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(141,3): error C3861: 'jack_port_disconnect': identifier not found
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(146,39): error C2065: 'jack_nframes_t': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(146,54): error C2146: syntax error: missing ')' before identifier 'nframes'
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(147,1): error C2143: syntax error: missing ';' before '{'
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.cpp(147,1): error C2447: '{': missing function header (old-style formal list?)
+  reverb.cpp
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(28,22): error C2065: 'jack_default_audio_sample_t': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(28,21): error C2059: syntax error: ','
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(29,6): error C2065: 'jack_default_audio_sample_t': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(29,36): error C2065: 'jack_default_audio_sample_t': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(29,67): error C2065: 'jack_nframes_t': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(33,51): error C2061: syntax error: identifier 'jack_nframes_t'
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(34,17): error C2143: syntax error: missing ';' before '*'
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(34,17): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\jack_module.h(34,24): error C2238: unexpected token(s) preceding ';'
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\reverb.cpp(62,120): error C2061: syntax error: identifier 'jack_default_audio_sample_t'
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\reverb.cpp(66,28): error C2065: 'nframes': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\reverb.cpp(69,14): error C2065: 'inBuf': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\reverb.cpp(75,9): error C2065: 'outBufL': undeclared identifier
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\reverb.cpp(80,9): error C2065: 'outBufR': undeclared identifier
+  ringbuffer.cpp
+F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\ringbuffer.cpp : fatal error C1041: cannot open program database 'F:\Dropbox\HKU\csd\C++\CSD2b\Delay reverb (voice oonly)\x64\Debug\vc142.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
+  Generating Code...
