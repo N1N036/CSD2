@@ -70,19 +70,17 @@ function setup() {
    planes.push(new Plane(i = k));
   }
 
-  // Instantiate a Sine Wave Oscillator
+
   osc = new p5.TriOsc();
   osc1 = new p5.TriOsc();
   osc2 = new p5.TriOsc();
 
-  // Tell the Oscillator to start oscillating.
-  // We hear the frequency of these oscillators as a pitch.
+
   osc.start();
   osc1.start();
   osc2.start();
 
-  // Oscillator has an output amplitude of 0.5 by default.
-  // We can make it louder.
+
   osc.amp(0.07);
   osc1.amp(0.07);
   osc2.amp(0.07);
@@ -189,14 +187,14 @@ Particle.prototype.run = function() {
   this.display();
 };
 
-// Method to update position
+
 Particle.prototype.update = function(){
   this.velocity.add(this.acceleration);
   this.position.add(this.velocity);
   this.lifespan -= 2;
 };
 
-// Method to display
+
 Particle.prototype.display = function() {
   stroke(200, this.lifespan);
   strokeWeight(2);
@@ -204,7 +202,7 @@ Particle.prototype.display = function() {
   ellipse(this.position.x, this.position.y, 12, 12);
 };
 
-// Is the particle still useful?
+
 Particle.prototype.isDead = function(){
   return this.lifespan < 0;
 };
